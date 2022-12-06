@@ -1,0 +1,250 @@
+/*mobile layout*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+body {
+    font-size:100%;
+    margin:0px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight:bold;
+}
+
+div {
+    box-sizing:border-box;
+}
+
+h2 {
+    margin:0 0 0.25em;
+    text-decoration:underline;
+}
+
+p {
+    margin:.25em 0 0 0;
+}
+
+img {
+    display:block;
+    width:100%;
+}
+
+.layout {
+    background-color:darkgray;
+    display:grid;
+    grid-template-rows:minmax(10vh,auto) minmax(84vh, auto) 7vh;
+    grid-template-columns:100%;
+    grid-template-areas:
+        "hd"
+        "main"
+        "ft";
+}
+
+.blogCard {
+    display:flex;
+    flex-direction:column;
+    box-shadow:0px 0px 30px #AAAAAA;
+}
+
+.blogCard:hover {
+    box-shadow:0px 0px 35px #4F4F4F;
+    cursor:pointer;
+}
+
+.blogTitle {
+    background-color:lightgray;
+    padding:1em;
+    font-size:1em;
+    flex-grow:1;
+}
+
+.blogPicture {
+    flex-grow:1
+}
+
+.button:hover {
+    cursor:pointer;
+    color:white;
+}
+
+footer {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#F5F6C5;
+    background-color:#357F07;
+    grid-area:ft;
+}
+
+#contentGrid {
+    display:grid;
+    grid-area:main;
+    background-color:whitesmoke;
+    justify-content:center;
+    padding:50px;
+    grid-gap:50px;
+    grid-template-columns:100%;
+    grid-auto-rows:minmax(25vh, auto);
+    grid-template-areas:
+        "one"
+        "two"
+        "three";
+}
+
+#blogPost {
+    grid-area:one;
+}
+
+#natureScene {
+    width:100%;
+    display:block;
+}
+
+#mountains {
+    width:100%;
+    display:block;
+}
+
+#fjord {
+    width:100%;
+    display:block;
+}
+
+#example1 {
+    grid-area:two;
+}
+
+#example2 {
+    grid-area:three;
+}
+
+#headerGrid {
+    display:grid;
+    background-color:#357F07;
+    color:#F5F6C5;
+    padding:.5em;
+    align-items:center;
+    justify-items:center;
+    grid-template-columns:33% 33% 33%;
+    grid-template-rows:auto;
+    grid-template-areas:
+        "left middle right";
+}
+
+#leftHeader {
+    justify-self:left;
+    font-size:1em;
+    grid-area:left;
+}
+
+#middleHeader {
+    font-size:2em;
+    text-align:center;
+    grid-area:middle;
+    font-weight:bolder;
+}
+
+#rightHeader {
+    justify-self:right;
+    font-size:1em;
+    grid-area:right;
+}
+
+@media (min-width: 1000px) {
+
+    body {
+        font-size:120%;
+    }
+
+    img {
+        height:100%
+    }
+
+    p {
+        width:70%;
+    }
+
+    .layout{
+        background-color:darkgray;
+        display:grid;
+        grid-template-rows:minmax(10vh, auto) minmax(83vh, auto) 7vh;
+        grid-template-columns:50% 50%;
+        grid-template-areas:
+            "hd hd"
+            "main main"
+            "ft ft";
+    }
+
+    .blogCard {
+        width:85vw;
+        display:flex;
+        flex-direction:row;
+    }
+    
+    .blogTitle {
+        background-color:lightgray;
+        grid-area:title;
+        flex-grow:1;
+        align-items:flex-start;
+    }
+    
+    .blogPicture {
+        grid-area:picture;
+        flex-grow:1
+    }
+
+    #contentGrid {
+        display:grid;
+        grid-area:main;
+        justify-items:center;
+        padding:50px;
+        grid-gap:50px;
+        grid-template-columns:100%;
+        grid-auto-rows:minmax(30vh, auto);
+        grid-template-areas:
+            "one"
+            "two"
+            "three";
+    }
+
+    #blogPost {
+        grid-area:one;
+    }
+    
+    #example1 {
+        grid-area:two;
+    }
+    
+    #example2 {
+        grid-area:three;
+    }
+
+    #footer {
+        display:flex;
+        grid-area:ft;
+    }
+
+    #headerGrid {
+        display:grid;
+        padding:20px;
+        align-items:center;
+        grid-area:hd;
+        grid-gap:20px;
+        grid-template-columns:30% 30% 30%;
+        grid-template-rows:auto;
+        grid-template-areas:
+            "left middle right"
+    }
+
+    #leftHeader {
+        justify-self:left;
+        grid-area:left;
+    }
+
+    #middleHeader {
+        justify-self:center;
+        grid-area:middle;
+    }
+
+    #rightHeader {
+        justify-self:right;
+        grid-area:right;
+    }
+}
